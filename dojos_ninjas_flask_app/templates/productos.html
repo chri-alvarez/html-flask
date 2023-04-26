@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilo.css') }}">
+    
+</head>
+<body>
+    <div class="parent-container d-flex">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="titulo">
+                        <h1> Nuevos Productos</h1>
+                    </div>
+                    <div class="mx-auto">
+                        <form action="/creando_producto" method = "post">
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label text-end">Nombre</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control form-control-sm" id="colFormLabelSm" name="nombre">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label text-end">Marca</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control form-control-sm" id="colFormLabelSm" name="marca">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label text-end">Tipo</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control form-control-sm" id="colFormLabelSm" name="tipo">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label text-end">Código</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control form-control-sm" id="colFormLabelSm" name="codigo">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label text-end">Serie</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control form-control-sm" id="colFormLabelSm" name="serie">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label text-end">Precio</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control form-control-sm" id="colFormLabelSm" name="precio">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label text-end">Stock</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control form-control-sm" id="colFormLabelSm" name="stock">
+                                </div>
+                            </div>
+                            <div class="titulo">
+                                <input type="submit" class="btn btn-danger" value="Crear Producto">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="row justify-content-start">
+                <div class="col">
+                    <h1 class="titulo">Todos los Productos</h1>
+                        <ul class="list-unstyled lista">
+                            {% for producto in productos %}
+                            <li><a href="/producto/{{producto}}">{{productos[producto]['nombre']}}</a></li>
+                            {% endfor %}
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

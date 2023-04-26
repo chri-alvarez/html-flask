@@ -1,6 +1,5 @@
 from dojos_ninjas_flask_app import app
-from dojos_ninjas_flask_app.controlador import controlador_ninjas
-from dojos_ninjas_flask_app.controlador import controlador_dojos
+from dojos_ninjas_flask_app.controlador import controlador_productos
 
 
 
